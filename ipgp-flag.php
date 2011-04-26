@@ -19,7 +19,7 @@ $xml = simplexml_load_file("http://www.ipgp.net/api/xml/". $ip);
 
 // print_r($xml);
 
-if($xml->Flag) { 
+if($xml->Flag && $xml->Code) { 
   ?>
   <a href="http://www.ipgp.net"><img src="<?=$xml->Flag?>" /></a>
 

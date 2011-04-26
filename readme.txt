@@ -4,7 +4,7 @@ Donate link: http://www.ipgp.net
 Tags: widget, ip address lookup, flag, user country flag, country flag, user ip address, ip address flag, shortcode, template tag, sidebar
 Requires at least: 2.0.2
 Tested up to: 3.1.1
-Stable tag: 0.1
+Stable tag: 0.2
 
 This plugin will allow you to show a flag of your visitors country. When a user goes to your website he will see a flag of its own country, based on the IP address lookup API from http://www.ipgp.net
 
@@ -32,6 +32,9 @@ No theme changes are needed for this plugin.
 You can place the plugin in your sidebar, or in a page or post using template tag [ipflag] or directly into the template with <? ipgp_flag(); ?> 
 
 == Changelog ==
+
+= 0.2 =
+* Fixed the problem showing a broken image when the country is not available 
 
 = 0.1 =
 * This is the first version of the plugin
