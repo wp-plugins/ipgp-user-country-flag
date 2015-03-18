@@ -4,7 +4,7 @@ Plugin Name: Ipgp User Country Flag
 Plugin URI: http://www.ipgp.net
 Description: Show user's country flag.
 Author: Lucian Apostol
-Version: 0.4
+Version: 0.5
 Author URI: http://www.ipgp.net
 */
 
@@ -14,7 +14,7 @@ function ipgp_flag()
 
 $ip =  getenv('REMOTE_ADDR'); 
 
-
+	$content = '';
        	$api_key=get_option('acces_key');
        	$api_key = 'wordpressplugin';
         	$file = "http://www.ipgp.net/api/json/".$ip."/".$api_key."";
@@ -29,18 +29,20 @@ $ip =  getenv('REMOTE_ADDR');
 // print_r($xml);
 
 if($xml->flag && $xml->code) { 
-  ?>
-  <a href="http://www.ipgp.net" rel="nofollow"><img src="<?=$xml->flag?>" /></a>
+  $content .= '
+  <a href="http://www.ipgp.net" rel="nofollow"><img src="'. $xml->flag .'" /></a>
 
-  <?
+  ';
 	}
+	
+	return $content;
  }
 
 function ipgpCountryWidget($args) {
 
 //	 extract($args);
 //	 echo $before_widget;
-	 ipgp_flag();
+	 echo ipgp_flag();
 //	 echo $after_widget;
 }
 
